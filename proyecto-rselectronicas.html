@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto RS Electrónicas - Plataforma técnica digital especializada en tecnología inverter">
+    <title>RS Electrónicas - NexusTech Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="legal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            padding: 160px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .project-detail-hero {
+                padding-top: 140px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-detail-hero {
+                padding-top: 130px;
+            }
+        }
+        
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .project-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: var(--spacing-xl);
+            transition: all 0.3s;
+            margin-top: 40px;
+        }
+        
+        .project-back-link:hover {
+            gap: 1rem;
+            color: var(--primary-light);
+        }
+        
+        .project-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(90deg, var(--white), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-description {
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            margin-bottom: var(--spacing-lg);
+            max-width: 800px;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .project-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .project-meta-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-meta-value {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .project-cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .project-detail-content {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .project-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .project-section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-left: var(--spacing-md);
+            margin-top: 40px;
+            
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .project-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, rgba(30, 64, 175, 0.05), rgba(15, 23, 42, 0.8));
+            padding: var(--spacing-md);
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-description {
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 23, 42, 0.5));
+            padding: var(--spacing-md);
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            color: var(--gray-light);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-detail-hero {
+                padding-top: 160px;
+            }
+            
+            .project-title {
+                font-size: 2rem;
+                margin-top: 40px;
+            }
+            
+            .project-description {
+                font-size: 1rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .project-cta-buttons {
+                flex-direction: column;
+            }
+            
+            .project-cta-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="img/logo-nexustech.jpeg" alt="NexusTech" class="logo-image">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">NexusTech</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre-nosotros">Nosotros</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="procesos.html">Proceso</a></li>
+                    <li><a href="index.html#portafolio">Portafolio</a></li>
+                    <li><a href="index.html#testimonios">Testimonios</a></li>
+                    <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero del Proyecto -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <a href="index.html#portafolio" class="project-back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver al Portafolio
+                </a>
+                
+                <span class="project-category">Plataforma Web</span>
+                
+                <h1 class="project-title">RS Electrónicas</h1>
+                
+                <p class="project-description">
+                    Plataforma web técnica especializada en tecnología inverter, diseñada para brindar información detallada y recursos técnicos a profesionales del sector de refrigeración y climatización.
+                </p>
+                
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Cliente</span>
+                        <span class="project-meta-value">RS Electrónicas</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Industria</span>
+                        <span class="project-meta-value">Tecnología y Refrigeración</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Año</span>
+                        <span class="project-meta-value">2024</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Servicios</span>
+                        <span class="project-meta-value">Desarrollo Web, SEO</span>
+                    </div>
+                </div>
+                
+                <div class="project-cta-buttons">
+                    <a href="https://rselectronicas.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Visitar Sitio Web</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#contacto" class="btn btn-secondary">
+                        <span>Solicitar Proyecto Similar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del Proyecto -->
+    <section class="project-detail-content">
+        <div class="container">
+            <!-- Descripción General -->
+            <div class="project-section">
+                <h2 class="project-section-title">Descripción del Proyecto</h2>
+                <div class="legal-article">
+                    <p>RS Electrónicas requería una plataforma web profesional que sirviera como centro de recursos técnicos para profesionales del sector de refrigeración y climatización. El objetivo principal era crear un sitio que no solo presentara los servicios de la empresa, sino que también funcionara como una herramienta educativa y de soporte técnico.</p>
+                    <p>El proyecto se desarrolló con un enfoque en la experiencia del usuario, priorizando la accesibilidad a la información técnica y la facilidad de navegación. Se implementó un diseño responsive moderno que garantiza una experiencia óptima en todos los dispositivos.</p>
+                </div>
+            </div>
+
+            <!-- Características Principales -->
+            <div class="project-section">
+                <h2 class="project-section-title">Características Principales</h2>
+                <div class="project-features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">Diseño Responsive</h3>
+                        <p class="feature-description">Interfaz completamente adaptable que funciona perfectamente en smartphones, tablets y computadoras de escritorio.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Rendimiento Optimizado</h3>
+                        <p class="feature-description">Tiempos de carga ultrarrápidos mediante optimización de imágenes y código, mejorando la experiencia del usuario y el SEO.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">Biblioteca Técnica</h3>
+                        <p class="feature-description">Sección dedicada a recursos técnicos, manuales y guías sobre tecnología inverter y sistemas de refrigeración.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3 class="feature-title">SEO Optimizado</h3>
+                        <p class="feature-description">Implementación de mejores prácticas de SEO para mejorar la visibilidad en motores de búsqueda y atraer tráfico cualificado.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📧</div>
+                        <h3 class="feature-title">Sistema de Contacto</h3>
+                        <p class="feature-description">Formularios de contacto integrados para consultas técnicas y solicitudes de servicio.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">Seguridad Avanzada</h3>
+                        <p class="feature-description">Implementación de certificado SSL y medidas de seguridad para proteger los datos de los usuarios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tecnologías Utilizadas -->
+            <div class="project-section">
+                <h2 class="project-section-title">Tecnologías Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Responsive Design</span>
+                    <span class="tech-tag">SEO</span>
+                    <span class="tech-tag">Google Analytics</span>
+                    <span class="tech-tag">Performance Optimization</span>
+                </div>
+            </div>
+
+            <!-- Desafíos y Soluciones -->
+            <div class="project-section">
+                <h2 class="project-section-title">Desafíos y Soluciones</h2>
+                <div class="legal-article">
+                    <h3>Desafío 1: Organización de Contenido Técnico</h3>
+                    <p><strong>Problema:</strong> El cliente contaba con gran cantidad de información técnica que necesitaba ser presentada de manera clara y accesible.</p>
+                    <p><strong>Solución:</strong> Desarrollamos una estructura de navegación intuitiva con categorías bien definidas y un sistema de búsqueda interno que permite a los usuarios encontrar rápidamente la información que necesitan.</p>
+                    
+                    <h3>Desafío 2: Rendimiento con Contenido Multimedia</h3>
+                    <p><strong>Problema:</strong> El sitio requería múltiples imágenes técnicas y diagramas que podían afectar los tiempos de carga.</p>
+                    <p><strong>Solución:</strong> Implementamos técnicas de lazy loading y optimización de imágenes que mantienen la calidad visual mientras reducen significativamente el tamaño de los archivos.</p>
+                    
+                    <h3>Desafío 3: Audiencia Técnica Diversa</h3>
+                    <p><strong>Problema:</strong> Los usuarios van desde técnicos experimentados hasta personas buscando información básica.</p>
+                    <p><strong>Solución:</strong> Creamos secciones diferenciadas para distintos niveles de conocimiento técnico, con contenido progresivo que guía al usuario según su experiencia.</p>
+                </div>
+            </div>
+
+            <!-- Resultados -->
+            <div class="project-section">
+                <h2 class="project-section-title">Resultados</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">150%</div>
+                        <div class="result-label">Aumento en Tráfico Web</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">2.5s</div>
+                        <div class="result-label">Tiempo de Carga Promedio</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">95%</div>
+                        <div class="result-label">Satisfacción del Cliente</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">60%</div>
+                        <div class="result-label">Más Consultas Mensuales</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Final -->
+            <div class="project-section">
+                <div class="footer-cta-content" style="text-align: center; padding: var(--spacing-xl); background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 23, 42, 0.5)); border-radius: 1rem; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <h2>¿Te gustaría un proyecto similar?</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">Podemos crear una solución personalizada para tu negocio</p>
+                    <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                        <a href="index.html#contacto" class="btn btn-primary">
+                            <span>Solicitar Cotización</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="index.html#portafolio" class="btn btn-secondary">
+                            <span>Ver Más Proyectos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
