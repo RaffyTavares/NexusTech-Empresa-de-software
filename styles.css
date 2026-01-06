@@ -120,6 +120,11 @@ body {
     padding-right: var(--spacing-md);
 }
 
+.nav-content > a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -657,9 +662,15 @@ section:last-of-type {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
     width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 640px) {
