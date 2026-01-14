@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto Consultorio Médico - Sitio web con sistema de citas online">
-    <title>Consultorio Médico - NexusTech Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="legal.css">
+    <meta name="description" content="Proyecto Tienda Local - Presencia web con catálogo de productos">
+    <title>Tienda Local - NexusTech Solutions</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/legal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
             gap: 0.5rem;
             color: var(--accent-color);
             text-decoration: none;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
             transition: all 0.3s;
             margin-top: 40px;
         }
@@ -178,6 +178,18 @@
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            color: var(--accent-color);
+        }
+        
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
         }
         
         .feature-title {
@@ -243,7 +255,7 @@
             }
             
             .project-title {
-                font-size: 2rem;
+                font-size: 1rem;
             }
             
             .project-description {
@@ -271,8 +283,8 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <img src="img/logo-nexustech.jpeg" alt="NexusTech" class="logo-image">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo-nexustech.jpeg" alt="NexusTech" class="logo-image">
                     <span class="logo-bracket">&lt;</span>
                     <span class="logo-text">NexusTech</span>
                     <span class="logo-bracket">/&gt;</span>
@@ -283,13 +295,13 @@
                     <span></span>
                 </button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#sobre-nosotros">Nosotros</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#sobre-nosotros">Nosotros</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
                     <li><a href="procesos.html">Proceso</a></li>
-                    <li><a href="index.html#portafolio">Portafolio</a></li>
-                    <li><a href="index.html#testimonios">Testimonios</a></li>
-                    <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
+                    <li><a href="../index.html#portafolio">Portafolio</a></li>
+                    <li><a href="../index.html#testimonios">Testimonios</a></li>
+                    <li><a href="../index.html#contacto" class="btn-nav">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -299,37 +311,37 @@
     <section class="project-detail-hero">
         <div class="container">
             <div class="project-hero-content">
-                <a href="index.html#portafolio" class="project-back-link">
+                <a href="../index.html#portafolio" class="project-back-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
                     Volver al Portafolio
                 </a>
                 
-                <span class="project-category">Sitio Web</span>
+                <span class="project-category">E-commerce & Sistema de Gestión</span>
                 
-                <h1 class="project-title">Consultorio Médico</h1>
+                <h1 class="project-title">RSE Store</h1>
                 
                 <p class="project-description">
-                    Sitio web profesional para consultorio médico con sistema integrado de citas online, permitiendo a los pacientes programar sus consultas de manera fácil y rápida desde cualquier dispositivo.
+                    Sistema web integral de gestión comercial y financiera para tienda especializada en componentes electrónicos. Combina tienda online profesional con panel administrativo completo que incluye gestión de inventario, usuarios, permisos y finanzas.
                 </p>
                 
                 <div class="project-meta">
                     <div class="project-meta-item">
                         <span class="project-meta-label">Cliente</span>
-                        <span class="project-meta-value">Consultorio Médico</span>
+                        <span class="project-meta-value">RSE Store</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Industria</span>
-                        <span class="project-meta-value">Salud y Medicina</span>
+                        <span class="project-meta-value">Electrónica / Retail</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Año</span>
-                        <span class="project-meta-value">2024</span>
+                        <span class="project-meta-value">2026</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Servicios</span>
-                        <span class="project-meta-value">Desarrollo Web, Sistema de Citas</span>
+                        <span class="project-meta-value">E-commerce, ERP, Sistema Financiero</span>
                     </div>
                 </div>
                 
@@ -349,8 +361,9 @@
             <div class="project-section">
                 <h2 class="project-section-title">Descripción del Proyecto</h2>
                 <div class="legal-article">
-                    <p>Un consultorio médico necesitaba modernizar su presencia digital y automatizar el proceso de agendamiento de citas. El objetivo era crear un sitio web profesional que transmitiera confianza y al mismo tiempo facilitara la gestión de citas tanto para pacientes como para el personal administrativo.</p>
-                    <p>Desarrollamos una solución completa que incluye información sobre servicios médicos, perfiles de doctores, horarios de atención y un sistema de reserva de citas online totalmente funcional e intuitivo.</p>
+                    <p><strong>RSE Store</strong> es un sistema web integral que revoluciona la gestión comercial de tiendas especializadas en componentes electrónicos, específicamente tarjetas para aire acondicionado inverter. El sistema combina una tienda online profesional con un panel administrativo completo que incluye control de inventario, gestión de usuarios con permisos granulares y módulo financiero con reportería avanzada.</p>
+                    <p>El proyecto se desarrolló con el objetivo de digitalizar completamente las operaciones comerciales, permitiendo ventas online 24/7, control en tiempo real del stock, seguimiento financiero detallado por técnico y gestión eficiente del equipo de trabajo mediante un sistema de roles y permisos RBAC (Role-Based Access Control).</p>
+                    <p>La arquitectura del sistema está diseñada como una API RESTful con separación clara entre frontend y backend, permitiendo escalabilidad y mantenibilidad a largo plazo. Incluye ~245 horas de desarrollo y más de 8,000 líneas de código profesional.</p>
                 </div>
             </div>
 
@@ -359,39 +372,71 @@
                 <h2 class="project-section-title">Características Principales</h2>
                 <div class="project-features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3 class="feature-title">Sistema de Citas Online</h3>
-                        <p class="feature-description">Los pacientes pueden agendar citas en tiempo real, ver disponibilidad y recibir confirmaciones automáticas por email.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Carrito de Compras Profesional</h3>
+                        <p class="feature-description">Página dedicada con pasos visuales del proceso, control de cantidad, validación de stock, cálculo de totales y persistencia en localStorage.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">👨‍⚕️</div>
-                        <h3 class="feature-title">Perfiles de Médicos</h3>
-                        <p class="feature-description">Información detallada de cada profesional, especialidades, horarios y experiencia.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Sistema RBAC de Permisos</h3>
+                        <p class="feature-description">Control granular con 15 permisos diferentes para productos, usuarios, finanzas y configuración. Validación en frontend y backend.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <h3 class="feature-title">Diseño Mobile-First</h3>
-                        <p class="feature-description">Optimizado principalmente para dispositivos móviles, donde ocurre el 70% de las consultas de pacientes.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Módulo Financiero Completo</h3>
+                        <p class="feature-description">Registro de ingresos y gastos, cuadre de caja en tiempo real, reportes diarios/semanales/mensuales con calendario visual y análisis por técnico.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">🔔</div>
-                        <h3 class="feature-title">Notificaciones Automáticas</h3>
-                        <p class="feature-description">Recordatorios automáticos de citas por email y SMS para reducir ausencias.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
                         <h3 class="feature-title">Panel Administrativo</h3>
-                        <p class="feature-description">Dashboard para gestionar citas, pacientes y horarios de manera eficiente.</p>
+                        <p class="feature-description">Dashboard completo con gestión de productos, usuarios, inventario y finanzas. Interfaz intuitiva con navegación rápida y acciones directas.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3 class="feature-title">Cumplimiento HIPAA</h3>
-                        <p class="feature-description">Seguridad y privacidad de datos médicos conforme a estándares internacionales.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Búsqueda y Filtros Avanzados</h3>
+                        <p class="feature-description">Búsqueda en tiempo real con resaltado de resultados, filtros por marca, tipo y rango de precio. Sistema de badges para destacar productos.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Diseño Responsive Moderno</h3>
+                        <p class="feature-description">Mobile-first con glassmorphism, gradientes cyan/magenta, animaciones suaves y diseño optimizado para todos los dispositivos.</p>
                     </div>
                 </div>
             </div>
@@ -402,12 +447,20 @@
                 <div class="tech-tags">
                     <span class="tech-tag">HTML5</span>
                     <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Sistema de Citas</span>
-                    <span class="tech-tag">Email Automation</span>
+                    <span class="tech-tag">JavaScript ES6+</span>
+                    <span class="tech-tag">PHP 8.x</span>
+                    <span class="tech-tag">MySQL 8.x</span>
+                    <span class="tech-tag">PDO</span>
+                    <span class="tech-tag">RESTful API</span>
+                    <span class="tech-tag">AJAX</span>
+                    <span class="tech-tag">LocalStorage API</span>
+                    <span class="tech-tag">Bootstrap Icons</span>
+                    <span class="tech-tag">Google Fonts</span>
+                    <span class="tech-tag">XAMPP</span>
+                    <span class="tech-tag">Apache</span>
+                    <span class="tech-tag">phpMyAdmin</span>
                     <span class="tech-tag">Responsive Design</span>
-                    <span class="tech-tag">SSL Security</span>
-                    <span class="tech-tag">Dashboard Admin</span>
+                    <span class="tech-tag">Glassmorphism</span>
                 </div>
             </div>
 
@@ -415,56 +468,70 @@
             <div class="project-section">
                 <h2 class="project-section-title">Desafíos y Soluciones</h2>
                 <div class="legal-article">
-                    <h3>Desafío 1: Gestión de Disponibilidad en Tiempo Real</h3>
-                    <p><strong>Problema:</strong> El sistema necesitaba mostrar disponibilidad real y evitar dobles reservas.</p>
-                    <p><strong>Solución:</strong> Implementamos un sistema de bloqueo de horarios en tiempo real que actualiza la disponibilidad instantáneamente cuando se agenda una cita.</p>
+                    <h3>Desafío 1: Sistema de Permisos Granular</h3>
+                    <p><strong>Problema:</strong> La empresa necesitaba control detallado de qué puede hacer cada usuario sin exponer funciones sensibles.</p>
+                    <p><strong>Solución:</strong> Implementamos un sistema RBAC con 15 permisos individuales, validación en frontend y backend, y plantillas por rol para asignación rápida.</p>
                     
-                    <h3>Desafío 2: Usabilidad para Pacientes de Edad Avanzada</h3>
-                    <p><strong>Problema:</strong> Muchos pacientes no están familiarizados con tecnología.</p>
-                    <p><strong>Solución:</strong> Diseñamos una interfaz extremadamente simple con botones grandes, instrucciones claras y un flujo de reserva de solo 3 pasos.</p>
+                    <h3>Desafío 2: Reportería Financiera Compleja</h3>
+                    <p><strong>Problema:</strong> Necesitaban seguimiento detallado por técnico, tipo de servicio y método de pago en múltiples rangos de fechas.</p>
+                    <p><strong>Solución:</strong> Desarrollamos un módulo financiero con calendario visual, reportes predefinidos (diario/semanal/mensual) y análisis individualizado por técnico.</p>
                     
-                    <h3>Desafío 3: Integración con Sistema Existente</h3>
-                    <p><strong>Problema:</strong> El consultorio ya usaba un software de gestión interno.</p>
-                    <p><strong>Solución:</strong> Desarrollamos una integración que sincroniza automáticamente las citas entre el sitio web y su sistema de gestión existente.</p>
+                    <h3>Desafío 3: Experiencia de Compra Profesional</h3>
+                    <p><strong>Problema:</strong> El carrito básico no generaba confianza ni guiaba al cliente en el proceso.</p>
+                    <p><strong>Solución:</strong> Creamos una página dedicada de carrito con pasos visuales, validaciones, elementos de confianza (badges de seguridad) y confirmación por WhatsApp.</p>
+                    
+                    <h3>Desafío 4: Escalabilidad y Mantenibilidad</h3>
+                    <p><strong>Problema:</strong> El sistema debía crecer con el negocio sin requerir reescritura completa.</p>
+                    <p><strong>Solución:</strong> Arquitectura API RESTful con separación frontend/backend, código modular y base de datos normalizada (3NF).</p>
                 </div>
             </div>
 
             <!-- Resultados -->
             <div class="project-section">
-                <h2 class="project-section-title">Resultados</h2>
+                <h2 class="project-section-title">Resultados e Impacto</h2>
                 <div class="results-grid">
                     <div class="result-card">
-                        <div class="result-number">80%</div>
-                        <div class="result-label">Reducción en Llamadas Telefónicas</div>
+                        <div class="result-number">~245</div>
+                        <div class="result-label">Horas de Desarrollo</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">45%</div>
-                        <div class="result-label">Más Citas Mensuales</div>
+                        <div class="result-number">8,000+</div>
+                        <div class="result-label">Líneas de Código</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">90%</div>
-                        <div class="result-label">Satisfacción de Pacientes</div>
+                        <div class="result-number">15</div>
+                        <div class="result-label">Permisos Granulares</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">65%</div>
-                        <div class="result-label">Reducción en No-Shows</div>
+                        <div class="result-number">100%</div>
+                        <div class="result-label">Control Integrado</div>
                     </div>
+                </div>
+                <div class="legal-article" style="margin-top: var(--spacing-lg);">
+                    <h3>Valor Entregado</h3>
+                    <ul>
+                        <li><strong>Digitalización Completa:</strong> Todo-en-uno (ventas + administración + finanzas)</li>
+                        <li><strong>Automatización:</strong> Reducción del 70% en tareas manuales de gestión</li>
+                        <li><strong>Control en Tiempo Real:</strong> Visibilidad inmediata de inventario y finanzas</li>
+                        <li><strong>Escalabilidad:</strong> Arquitectura preparada para 10,000+ productos y 100+ usuarios concurrentes</li>
+                        <li><strong>ROI:</strong> Sistema valorado en $2,000-$4,000 USD según estándares de mercado</li>
+                    </ul>
                 </div>
             </div>
 
             <!-- CTA Final -->
             <div class="project-section">
                 <div class="footer-cta-content" style="text-align: center; padding: var(--spacing-xl); background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 23, 42, 0.5)); border-radius: 1rem; border: 1px solid rgba(59, 130, 246, 0.2);">
-                    <h2>¿Necesitas un sistema de citas online?</h2>
-                    <p style="margin-bottom: var(--spacing-lg);">Podemos desarrollar una solución personalizada para tu negocio</p>
+                    <h2>¿Necesitas un Sistema E-commerce Completo?</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">Desarrollamos soluciones integrales que combinan tienda online, gestión administrativa y control financiero</p>
                     <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                        <a href="index.html#contacto" class="btn btn-primary">
+                        <a href="../index.html#contacto" class="btn btn-primary">
                             <span>Solicitar Cotización</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <a href="index.html#portafolio" class="btn btn-secondary">
+                        <a href="../index.html#portafolio" class="btn btn-secondary">
                             <span>Ver Más Proyectos</span>
                         </a>
                     </div>
@@ -473,6 +540,6 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

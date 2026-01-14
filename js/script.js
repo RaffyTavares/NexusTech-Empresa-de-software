@@ -321,11 +321,16 @@ if (window.matchMedia('(hover: hover)').matches) {
     });
 }
 
-// Prevenir comportamiento por defecto en links sociales (demo)
+// Prevenir comportamiento por defecto en links sociales sin URL real
 document.querySelectorAll('.social-links a').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Aquí iría el enlace a tu red social. Agrega los links reales cuando tengas las cuentas configuradas.');
+        const href = link.getAttribute('href');
+        // Solo mostrar alerta si no hay un link real
+        if (!href || href === '#' || href === '') {
+            e.preventDefault();
+            alert('Esta red social aún no está disponible. Estamos trabajando en nuestra presencia digital. ¡Pronto estaremos conectados!');
+        }
+        // Si hay un link real (http, https, etc), permitir que funcione normalmente
     });
 });
 
@@ -467,8 +472,8 @@ if (whatsappForm) {
         const numeroWhatsApp = '18096297596';
 
         const texto = `Hola, mi nombre es ${nombre}.
-Teléfono: ${telefono}
-Mensaje: ${mensaje}`;
+        Teléfono: ${telefono}
+        Mensaje: ${mensaje}`;
 
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
 
@@ -481,5 +486,5 @@ Mensaje: ${mensaje}`;
 
 }); // Fin del DOMContentLoaded
 
-console.log('%c¡Bienvenido a DevWeb Solutions! 🚀', 'color: #3b82f6; font-size: 20px; font-weight: bold;');
+console.log('%c¡Bienvenido a NexusTech Solutions! ', 'color: #3b82f6; font-size: 20px; font-weight: bold;');
 console.log('%cSitio desarrollado con HTML, CSS y JavaScript', 'color: #60a5fa; font-size: 14px;');

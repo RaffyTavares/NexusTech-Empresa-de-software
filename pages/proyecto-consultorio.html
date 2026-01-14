@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto RS Electrónicas - Plataforma técnica digital especializada en tecnología inverter">
-    <title>RS Electrónicas - NexusTech Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="legal.css">
+    <meta name="description" content="Proyecto Consultorio Médico - Sitio web con sistema de citas online">
+    <title>Consultorio Médico - NexusTech Solutions</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/legal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
             gap: 0.5rem;
             color: var(--accent-color);
             text-decoration: none;
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-sm);
             transition: all 0.3s;
             margin-top: 40px;
         }
@@ -137,11 +137,9 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
             position: relative;
             padding-left: var(--spacing-md);
-            margin-top: 40px;
-            
         }
         
         .project-section-title::before {
@@ -180,6 +178,18 @@
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            color: var(--accent-color);
+        }
+        
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
         }
         
         .feature-title {
@@ -241,12 +251,11 @@
         
         @media (max-width: 768px) {
             .project-detail-hero {
-                padding-top: 160px;
+                padding-top: 140px;
             }
             
             .project-title {
                 font-size: 2rem;
-                margin-top: 40px;
             }
             
             .project-description {
@@ -274,8 +283,8 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <img src="img/logo-nexustech.jpeg" alt="NexusTech" class="logo-image">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo-nexustech.jpeg" alt="NexusTech" class="logo-image">
                     <span class="logo-bracket">&lt;</span>
                     <span class="logo-text">NexusTech</span>
                     <span class="logo-bracket">/&gt;</span>
@@ -286,13 +295,13 @@
                     <span></span>
                 </button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#sobre-nosotros">Nosotros</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#sobre-nosotros">Nosotros</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
                     <li><a href="procesos.html">Proceso</a></li>
-                    <li><a href="index.html#portafolio">Portafolio</a></li>
-                    <li><a href="index.html#testimonios">Testimonios</a></li>
-                    <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
+                    <li><a href="../index.html#portafolio">Portafolio</a></li>
+                    <li><a href="../index.html#testimonios">Testimonios</a></li>
+                    <li><a href="../index.html#contacto" class="btn-nav">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -302,29 +311,29 @@
     <section class="project-detail-hero">
         <div class="container">
             <div class="project-hero-content">
-                <a href="index.html#portafolio" class="project-back-link">
+                <a href="../index.html#portafolio" class="project-back-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
                     Volver al Portafolio
                 </a>
                 
-                <span class="project-category">Plataforma Web</span>
+                <span class="project-category">Sitio Web</span>
                 
-                <h1 class="project-title">RS Electrónicas</h1>
+                <h1 class="project-title">Consultorio Médico</h1>
                 
                 <p class="project-description">
-                    Plataforma web técnica especializada en tecnología inverter, diseñada para brindar información detallada y recursos técnicos a profesionales del sector de refrigeración y climatización.
+                    Sitio web profesional para consultorio médico con sistema integrado de citas online, permitiendo a los pacientes programar sus consultas de manera fácil y rápida desde cualquier dispositivo.
                 </p>
                 
                 <div class="project-meta">
                     <div class="project-meta-item">
                         <span class="project-meta-label">Cliente</span>
-                        <span class="project-meta-value">RS Electrónicas</span>
+                        <span class="project-meta-value">Consultorio Médico</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Industria</span>
-                        <span class="project-meta-value">Tecnología y Refrigeración</span>
+                        <span class="project-meta-value">Salud y Medicina</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Año</span>
@@ -332,18 +341,12 @@
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Servicios</span>
-                        <span class="project-meta-value">Desarrollo Web, SEO</span>
+                        <span class="project-meta-value">Desarrollo Web, Sistema de Citas</span>
                     </div>
                 </div>
                 
                 <div class="project-cta-buttons">
-                    <a href="https://rselectronicas.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        <span>Visitar Sitio Web</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                        </svg>
-                    </a>
-                    <a href="index.html#contacto" class="btn btn-secondary">
+                    <a href="index.html#contacto" class="btn btn-primary">
                         <span>Solicitar Proyecto Similar</span>
                     </a>
                 </div>
@@ -358,8 +361,8 @@
             <div class="project-section">
                 <h2 class="project-section-title">Descripción del Proyecto</h2>
                 <div class="legal-article">
-                    <p>RS Electrónicas requería una plataforma web profesional que sirviera como centro de recursos técnicos para profesionales del sector de refrigeración y climatización. El objetivo principal era crear un sitio que no solo presentara los servicios de la empresa, sino que también funcionara como una herramienta educativa y de soporte técnico.</p>
-                    <p>El proyecto se desarrolló con un enfoque en la experiencia del usuario, priorizando la accesibilidad a la información técnica y la facilidad de navegación. Se implementó un diseño responsive moderno que garantiza una experiencia óptima en todos los dispositivos.</p>
+                    <p>Un consultorio médico necesitaba modernizar su presencia digital y automatizar el proceso de agendamiento de citas. El objetivo era crear un sitio web profesional que transmitiera confianza y al mismo tiempo facilitara la gestión de citas tanto para pacientes como para el personal administrativo.</p>
+                    <p>Desarrollamos una solución completa que incluye información sobre servicios médicos, perfiles de doctores, horarios de atención y un sistema de reserva de citas online totalmente funcional e intuitivo.</p>
                 </div>
             </div>
 
@@ -368,39 +371,73 @@
                 <h2 class="project-section-title">Características Principales</h2>
                 <div class="project-features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <h3 class="feature-title">Diseño Responsive</h3>
-                        <p class="feature-description">Interfaz completamente adaptable que funciona perfectamente en smartphones, tablets y computadoras de escritorio.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Sistema de Citas Online</h3>
+                        <p class="feature-description">Los pacientes pueden agendar citas en tiempo real, ver disponibilidad y recibir confirmaciones automáticas por email.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3 class="feature-title">Rendimiento Optimizado</h3>
-                        <p class="feature-description">Tiempos de carga ultrarrápidos mediante optimización de imágenes y código, mejorando la experiencia del usuario y el SEO.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="8.5" cy="7" r="4"/>
+                                <polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Perfiles de Médicos</h3>
+                        <p class="feature-description">Información detallada de cada profesional, especialidades, horarios y experiencia.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3 class="feature-title">Biblioteca Técnica</h3>
-                        <p class="feature-description">Sección dedicada a recursos técnicos, manuales y guías sobre tecnología inverter y sistemas de refrigeración.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Diseño Mobile-First</h3>
+                        <p class="feature-description">Optimizado principalmente para dispositivos móviles, donde ocurre el 70% de las consultas de pacientes.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
-                        <h3 class="feature-title">SEO Optimizado</h3>
-                        <p class="feature-description">Implementación de mejores prácticas de SEO para mejorar la visibilidad en motores de búsqueda y atraer tráfico cualificado.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Notificaciones Automáticas</h3>
+                        <p class="feature-description">Recordatorios automáticos de citas por email y SMS para reducir ausencias.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">📧</div>
-                        <h3 class="feature-title">Sistema de Contacto</h3>
-                        <p class="feature-description">Formularios de contacto integrados para consultas técnicas y solicitudes de servicio.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Panel Administrativo</h3>
+                        <p class="feature-description">Dashboard para gestionar citas, pacientes y horarios de manera eficiente.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3 class="feature-title">Seguridad Avanzada</h3>
-                        <p class="feature-description">Implementación de certificado SSL y medidas de seguridad para proteger los datos de los usuarios.</p>
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Cumplimiento HIPAA</h3>
+                        <p class="feature-description">Seguridad y privacidad de datos médicos conforme a estándares internacionales.</p>
                     </div>
                 </div>
             </div>
@@ -412,10 +449,11 @@
                     <span class="tech-tag">HTML5</span>
                     <span class="tech-tag">CSS3</span>
                     <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Sistema de Citas</span>
+                    <span class="tech-tag">Email Automation</span>
                     <span class="tech-tag">Responsive Design</span>
-                    <span class="tech-tag">SEO</span>
-                    <span class="tech-tag">Google Analytics</span>
-                    <span class="tech-tag">Performance Optimization</span>
+                    <span class="tech-tag">SSL Security</span>
+                    <span class="tech-tag">Dashboard Admin</span>
                 </div>
             </div>
 
@@ -423,17 +461,17 @@
             <div class="project-section">
                 <h2 class="project-section-title">Desafíos y Soluciones</h2>
                 <div class="legal-article">
-                    <h3>Desafío 1: Organización de Contenido Técnico</h3>
-                    <p><strong>Problema:</strong> El cliente contaba con gran cantidad de información técnica que necesitaba ser presentada de manera clara y accesible.</p>
-                    <p><strong>Solución:</strong> Desarrollamos una estructura de navegación intuitiva con categorías bien definidas y un sistema de búsqueda interno que permite a los usuarios encontrar rápidamente la información que necesitan.</p>
+                    <h3>Desafío 1: Gestión de Disponibilidad en Tiempo Real</h3>
+                    <p><strong>Problema:</strong> El sistema necesitaba mostrar disponibilidad real y evitar dobles reservas.</p>
+                    <p><strong>Solución:</strong> Implementamos un sistema de bloqueo de horarios en tiempo real que actualiza la disponibilidad instantáneamente cuando se agenda una cita.</p>
                     
-                    <h3>Desafío 2: Rendimiento con Contenido Multimedia</h3>
-                    <p><strong>Problema:</strong> El sitio requería múltiples imágenes técnicas y diagramas que podían afectar los tiempos de carga.</p>
-                    <p><strong>Solución:</strong> Implementamos técnicas de lazy loading y optimización de imágenes que mantienen la calidad visual mientras reducen significativamente el tamaño de los archivos.</p>
+                    <h3>Desafío 2: Usabilidad para Pacientes de Edad Avanzada</h3>
+                    <p><strong>Problema:</strong> Muchos pacientes no están familiarizados con tecnología.</p>
+                    <p><strong>Solución:</strong> Diseñamos una interfaz extremadamente simple con botones grandes, instrucciones claras y un flujo de reserva de solo 3 pasos.</p>
                     
-                    <h3>Desafío 3: Audiencia Técnica Diversa</h3>
-                    <p><strong>Problema:</strong> Los usuarios van desde técnicos experimentados hasta personas buscando información básica.</p>
-                    <p><strong>Solución:</strong> Creamos secciones diferenciadas para distintos niveles de conocimiento técnico, con contenido progresivo que guía al usuario según su experiencia.</p>
+                    <h3>Desafío 3: Integración con Sistema Existente</h3>
+                    <p><strong>Problema:</strong> El consultorio ya usaba un software de gestión interno.</p>
+                    <p><strong>Solución:</strong> Desarrollamos una integración que sincroniza automáticamente las citas entre el sitio web y su sistema de gestión existente.</p>
                 </div>
             </div>
 
@@ -442,20 +480,20 @@
                 <h2 class="project-section-title">Resultados</h2>
                 <div class="results-grid">
                     <div class="result-card">
-                        <div class="result-number">150%</div>
-                        <div class="result-label">Aumento en Tráfico Web</div>
+                        <div class="result-number">80%</div>
+                        <div class="result-label">Reducción en Llamadas Telefónicas</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">2.5s</div>
-                        <div class="result-label">Tiempo de Carga Promedio</div>
+                        <div class="result-number">45%</div>
+                        <div class="result-label">Más Citas Mensuales</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">95%</div>
-                        <div class="result-label">Satisfacción del Cliente</div>
+                        <div class="result-number">90%</div>
+                        <div class="result-label">Satisfacción de Pacientes</div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">60%</div>
-                        <div class="result-label">Más Consultas Mensuales</div>
+                        <div class="result-number">65%</div>
+                        <div class="result-label">Reducción en No-Shows</div>
                     </div>
                 </div>
             </div>
@@ -463,16 +501,16 @@
             <!-- CTA Final -->
             <div class="project-section">
                 <div class="footer-cta-content" style="text-align: center; padding: var(--spacing-xl); background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 23, 42, 0.5)); border-radius: 1rem; border: 1px solid rgba(59, 130, 246, 0.2);">
-                    <h2>¿Te gustaría un proyecto similar?</h2>
-                    <p style="margin-bottom: var(--spacing-lg);">Podemos crear una solución personalizada para tu negocio</p>
+                    <h2>¿Necesitas un sistema de citas online?</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">Podemos desarrollar una solución personalizada para tu negocio</p>
                     <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                        <a href="index.html#contacto" class="btn btn-primary">
+                        <a href="../index.html#contacto" class="btn btn-primary">
                             <span>Solicitar Cotización</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <a href="index.html#portafolio" class="btn btn-secondary">
+                        <a href="../index.html#portafolio" class="btn btn-secondary">
                             <span>Ver Más Proyectos</span>
                         </a>
                     </div>
@@ -481,6 +519,6 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

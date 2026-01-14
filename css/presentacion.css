@@ -1,0 +1,409 @@
+ 
+ 
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            touch-action: pan-y;
+        }
+
+        .presentation {
+            display: flex;
+            transition: transform 0.4s ease-out;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .slide {
+            min-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 3rem;
+            padding-bottom: 5rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slide-content {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+            margin: auto 0;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            color: #06b6d4;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 3vw, 1.3rem);
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+            
+        }
+
+          h4 {
+            font-size: clamp(1.3rem, 3vw, 1.3rem);
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+            
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .subtitle {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .domain {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #06b6d4;
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: #94a3b8;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .card {
+            background: rgba(30, 64, 175, 0.15);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .list-box {
+            text-align: left;
+            max-width: 700px;
+            margin: 1.5rem auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        li:before {
+            font-family: 'bootstrap-icons';
+            content: "\F26E";
+            position: absolute;
+            left: 0;
+            color: #06b6d4;
+            font-weight: normal;
+        }
+
+        .highlight {
+            background: rgba(6, 182, 212, 0.15);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border-left: 4px solid #06b6d4;
+            margin: 1.5rem 0;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #e0f2fe;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: rgba(6, 182, 212, 0.3);
+            border: 1px solid #06b6d4;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: #06b6d4;
+        }
+
+        .counter {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 1.1rem;
+            color: #94a3b8;
+            z-index: 100;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: rgba(30, 64, 175, 0.15);
+            padding: 1.2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            color: #06b6d4;
+            font-weight: bold;
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 2.5rem 2rem;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .steps {
+                gap: 1rem;
+            }
+            .step {
+                min-width: 140px;
+                padding: 1rem;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1.5rem 1rem;
+                overflow-y: auto;
+            }
+            .slide-content {
+                padding: 0.5rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            .domain {
+                font-size: 1.2rem;
+                margin: 1rem 0;
+            }
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                margin: 1rem 0;
+            }
+            .card {
+                padding: 1rem;
+            }
+            .icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            .list-box {
+                margin: 1rem auto;
+            }
+            li {
+                padding: 0.5rem 0;
+                padding-left: 1.5rem;
+            }
+            .highlight {
+                padding: 1rem;
+                margin: 1rem 0;
+                font-size: 0.95rem;
+            }
+            .steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            .step {
+                min-width: 100%;
+                padding: 0.8rem;
+            }
+            .step-num {
+                font-size: 1.8rem;
+            }
+            .nav-buttons {
+                bottom: 1rem;
+                right: 1rem;
+                gap: 0.5rem;
+            }
+            .nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            .counter {
+                bottom: 1rem;
+                left: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .slide {
+                padding: 1rem 0.8rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+            p, li {
+                font-size: 0.9rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .domain {
+                font-size: 1.1rem;
+            }
+            .card {
+                padding: 0.8rem;
+            }
+            .card ul {
+                padding-left: 0;
+            }
+            .card li {
+                font-size: 0.85rem;
+                padding: 0.3rem 0;
+                padding-left: 1.2rem;
+            }
+            .icon {
+                font-size: 1.8rem;
+            }
+            .highlight {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            .counter {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Extra Small / Landscape handling */
+        @media (max-height: 500px) {
+            .slide {
+                padding: 1rem;
+                justify-content: flex-start;
+                overflow-y: auto;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            .card {
+                padding: 0.5rem;
+            }
+            .icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.3rem;
+            }
+            .highlight {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+            }
+        }

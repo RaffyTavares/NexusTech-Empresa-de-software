@@ -27,14 +27,14 @@
     <meta name="msapplication-TileColor" content="#1e40af">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.nexustechsolutions.com/">
+    <link rel="canonical" href="https://www.nexustech.com/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.nexustechsolutions.com/">
+    <meta property="og:url" content="https://www.nexustech.com/">
     <meta property="og:title" content="NexusTech Solutions - Desarrollo Web Profesional en República Dominicana">
     <meta property="og:description" content="Transformamos tu presencia digital. Desarrollo web profesional para empresas en República Dominicana. Landing pages, sitios corporativos y e-commerce con diseño moderno y SEO optimizado.">
-    <meta property="og:image" content="https://www.nexustechsolutions.com/img/og-image.jpg">
+    <meta property="og:image" content="https://www.nexustech.com/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_DO">
@@ -42,10 +42,10 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.nexustechsolutions.com/">
+    <meta name="twitter:url" content="https://www.nexustech.com/">
     <meta name="twitter:title" content="NexusTech Solutions - Desarrollo Web Profesional">
     <meta name="twitter:description" content="Desarrollo web profesional para empresas en República Dominicana. Sitios modernos, responsive y optimizados para SEO.">
-    <meta name="twitter:image" content="https://www.nexustechsolutions.com/img/twitter-card.jpg">
+    <meta name="twitter:image" content="https://www.nexustech.com/img/twitter-card.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -63,8 +63,9 @@
      <link rel="icon" type="image/jpeg" href="img/logo-nexustech.jpeg">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -73,11 +74,11 @@
       "@type": "WebDesignCompany",
       "name": "NexusTech Solutions",
       "description": "Empresa de desarrollo web profesional especializada en sitios web modernos, landing pages y e-commerce para pequeñas y medianas empresas en República Dominicana.",
-      "url": "https://www.nexustechsolutions.com",
-      "logo": "https://www.nexustechsolutions.com/img/logo-nexustech.jpeg",
-      "image": "https://www.nexustechsolutions.com/img/og-image.jpg",
+      "url": "https://www.nexustech.com",
+      "logo": "https://www.nexustech.com/img/logo-nexustech.jpeg",
+      "image": "https://www.nexustech.com/img/og-image.jpg",
       "telephone": "+1-809-629-7596",
-      "email": "contacto@nexustechsolutions.com",
+    "email": "rafaeltavares0266@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Santo Domingo",
@@ -116,6 +117,8 @@
       }
     }
     </script>
+        <!-- Animated Icons Script -->
+        <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
     
     <!-- Local Business Schema -->
     <script type="application/ld+json">
@@ -123,9 +126,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "NexusTech Solutions",
-      "image": "https://www.nexustechsolutions.com/img/logo-nexustech.jpeg",
-      "@id": "https://www.nexustechsolutions.com",
-      "url": "https://www.nexustechsolutions.com",
+      "image": "https://www.nexustech.com/img/logo-nexustech.jpeg",
+      "@id": "https://www.nexustech.com",
+      "url": "https://www.nexustech.com",
       "telephone": "+1-809-629-7596",
       "priceRange": "$$",
       "address": {
@@ -202,6 +205,7 @@
       }
     }
     </script>
+   
 
    
 </head>
@@ -227,7 +231,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-nosotros">Nosotros</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="procesos.html">Proceso</a></li>
+                    <li><a href="/pages/procesos.html">Proceso</a></li>
                     <li><a href="#portafolio">Portafolio</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto" class="btn-nav">Contacto</a></li>
@@ -247,8 +251,12 @@
                 </h1>
                 <p class="hero-subtitle">Desarrollamos páginas web profesionales y modernas para empresas que buscan destacar en el mundo digital</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Comenzar Proyecto</a>
-                    <a href="#portafolio" class="btn btn-secondary">Ver Trabajos</a>
+                    <a href="#contacto" class="btn btn-primary d-inline-flex align-items-center gap-2">
+                    Comenzar Proyecto
+                    </a>
+                    <a href="#portafolio" class="btn btn-secondary"><i class="bi bi-database"></i> Ver Trabajos</a>
+                    <a href="presentacion.html" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:0.5em;"><i class="bi bi-easel2" style="font-size:1.2em;"></i>
+                    Ver presentación</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -633,7 +641,7 @@
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <a href="proyecto-rselectronicas.html" class="portfolio-link">
+                    <a href="/pages/proyecto-rselectronicas.html" class="portfolio-link">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Plataforma técnica digital" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3>Plataforma técnica digital</h3>
@@ -653,7 +661,7 @@
                 
 
                 <div class="portfolio-item">
-                    <a href="proyecto-consultorio.html" class="portfolio-link">
+                    <a href="/pages/proyecto-consultorio.html" class="portfolio-link">
                         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop" alt="Consultorio Médico" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3>Consultorio Médico</h3>
@@ -672,13 +680,14 @@
                 </div>
 
                 <div class="portfolio-item">
-                    <a href="proyecto-tienda.html" class="portfolio-link">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Tienda Local" class="portfolio-image">
+                    <a href="/pages/proyecto-tienda.html" class="portfolio-link">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="RSE Store" class="portfolio-image">
                         <div class="portfolio-overlay">
-                            <h3>Tienda Local</h3>
-                            <p>Presencia web con catálogo de productos</p>
+                            <h3>RSE Store</h3>
+                            <p>Sistema integral e-commerce con gestión administrativa y financiera</p>
                             <div class="portfolio-tags-wrapper">
                                 <span class="portfolio-tag">E-commerce</span>
+                                <span class="portfolio-tag">Sistema de Gestión</span>
                                 <span class="portfolio-btn">
                                     <span>Ver Detalles</span>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -730,8 +739,8 @@
                             </svg>
                         </div>
                         <div class="author-info">
-                            <h4>Carlos Martínez</h4>
-                            <p>Director, Martínez & Asociados</p>
+                            <h4>Laura Siri</h4>
+                            <p>Gerente, Rafael Soluciones Electronica</p>
                         </div>
                     </div>
                 </div>
@@ -766,7 +775,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Ana Rodríguez</h4>
-                            <p>CEO, Boutique Elegante</p>
+                            <p>CEO, Boutique</p>
                         </div>
                     </div>
                 </div>
@@ -800,7 +809,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Dr. Luis Fernández</h4>
-                            <p>Director, Clínica Salud Total</p>
+                            <p>Director, Clínica</p>
                         </div>
                     </div>
                 </div>
@@ -936,7 +945,7 @@
                             </svg>
                         </div>
                         <h4>Email</h4>
-                        <p>contacto@NexusTech.com</p>
+                        <p>rafaeltavares0266@gmail.com </p>
                     </div>
                     <div class="info-box">
                         <div class="info-icon">
@@ -984,7 +993,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <span>info@NexusTech.com</span>
+                            <span>rafaeltavares0266@gmail.com</span>
                         </div>
                         <div class="footer-contact-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1028,7 +1037,7 @@
                                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                             </svg>
                         </a>
-                        <a href="#" aria-label="Instagram" class="social-link">
+                        <a href="https://www.instagram.com/rafael_soluciones_electronica" aria-label="Instagram" class="social-link">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="#0f172a" stroke-width="2"/>
@@ -1071,11 +1080,11 @@
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 NexusTech Solutions. Todos los derechos reservados.</p>
                     <div class="footer-bottom-links">
-                        <a href="privacidad.html">Política de Privacidad</a>
+                        <a href="/legal/privacidad.html">Política de Privacidad</a>
                         <span class="separator">•</span>
-                        <a href="terminos.html">Términos de Servicio</a>
+                        <a href="/legal/terminos.html">Términos de Servicio</a>
                         <span class="separator">•</span>
-                        <a href="cookies.html">Cookies</a>
+                        <a href="/legal/cookies.html">Cookies</a>
                     </div>
                 </div>
             </div>
@@ -1095,6 +1104,9 @@
         <span class="whatsapp-tooltip">Contáctanos</span>
     </a>
 
+  
+
+
     <!-- AOS Animation Library -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -1108,6 +1120,7 @@
             disable: false
         });
     </script>
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
+    
 </body>
 </html>

@@ -9,6 +9,8 @@
     box-sizing: border-box;
 }
 
+/* Asegura que los iconos animados sean visibles y tengan tamaño adecuado */
+
 :root {
     /* Colores principales */
     --primary-color: #1e40af;
@@ -662,15 +664,11 @@ section:last-of-type {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-    width: 100%;
-}
-
-@media (max-width: 1200px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 640px) {
@@ -689,6 +687,10 @@ section:last-of-type {
     transform: translateZ(0);
     transform-style: preserve-3d;
     will-change: transform;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .service-card:hover {
