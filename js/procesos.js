@@ -205,12 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const style = document.createElement('style');
         style.textContent = `
             @keyframes pulse-circle {
-                0%, 100% { 
-                    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5); 
+                0%, 100% {
+                    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
                     transform: scale(1);
                 }
-                50% { 
-                    box-shadow: 0 0 60px rgba(59, 130, 246, 0.9), 0 0 90px rgba(59, 130, 246, 0.5); 
+                50% {
+                    box-shadow: 0 0 60px rgba(14, 165, 233, 0.9), 0 0 90px rgba(168, 85, 247, 0.5);
                     transform: scale(1.1);
                 }
             }
@@ -234,6 +234,26 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     };
 
+    // Efecto hover 3D en tarjetas de timeline (como service-cards)
+    const timeline3DEffect = () => {
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        document.querySelectorAll('.timeline-content').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 30;
+                const rotateY = (centerX - x) / 30;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    };
+
     // Inicializar todas las funciones
     observeTimeline();
     animateCounters();
@@ -244,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     timelineProgress();
     animateDurationIcons();
     addDynamicStyles();
+    timeline3DEffect();
 
     // Logging para desarrollo (remover en producción)
     console.log('✓ Página de procesos inicializada correctamente');

@@ -131,12 +131,6 @@ document.querySelectorAll('.section-header').forEach(el => {
     observer.observe(el);
 });
 
-// Observar tarjetas de servicios con efecto escalonado
-document.querySelectorAll('.service-card').forEach((el, index) => {
-    el.classList.add('scale-in', `stagger-${(index % 3) + 1}`);
-    observer.observe(el);
-});
-
 // Observar items de portafolio con diferentes direcciones
 document.querySelectorAll('.portfolio-item').forEach((el, index) => {
     const animClass = index % 2 === 0 ? 'slide-in-left' : 'slide-in-right';
@@ -188,7 +182,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-background');
     if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
 });
 
@@ -298,23 +292,23 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Agregar efecto hover 3D a las tarjetas (solo en dispositivos no táctiles)
+// Agregar efecto hover 3D sutil a las tarjetas (solo en dispositivos no tactiles)
 if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.service-card, .portfolio-item').forEach(card => {
+    document.querySelectorAll('.portfolio-item').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+
+            const rotateX = (y - centerY) / 25;
+            const rotateY = (centerX - x) / 25;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
         });
@@ -484,7 +478,208 @@ if (whatsappForm) {
     });
 }
 
+// ===========================
+// Sistema de partículas canvas
+// ===========================
+const heroCanvas = document.getElementById('hero-canvas');
+if (heroCanvas) {
+    const ctx = heroCanvas.getContext('2d');
+    let particles = [];
+    const PARTICLE_COUNT = 60;
+    const CONNECTION_RADIUS = 120;
+
+    function resizeCanvas() {
+        const hero = heroCanvas.parentElement;
+        heroCanvas.width = hero.offsetWidth;
+        heroCanvas.height = hero.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * heroCanvas.width;
+            this.y = Math.random() * heroCanvas.height;
+            this.vx = (Math.random() - 0.5) * 0.6;
+            this.vy = (Math.random() - 0.5) * 0.6;
+            this.radius = Math.random() * 2 + 1;
+            // Alternar entre cyan y púrpura
+            this.color = Math.random() > 0.5
+                ? 'rgba(14, 165, 233, 0.7)'
+                : 'rgba(168, 85, 247, 0.5)';
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > heroCanvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > heroCanvas.height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+
+    function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECTION_RADIUS) {
+                    const opacity = (1 - dist / CONNECTION_RADIUS) * 0.15;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(14, 165, 233, ${opacity})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        drawConnections();
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+}
+
+// ===========================
+// Botón "Volver arriba"
+// ===========================
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ===========================
+// Carrusel 3D de Servicios
+// ===========================
+const carouselTrack = document.querySelector('.carousel-track');
+if (carouselTrack) {
+    const cards = carouselTrack.querySelectorAll('.service-card');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const total = cards.length;
+    let currentIndex = 0;
+    let autoplayTimer = null;
+
+    function updateCarousel(index) {
+        currentIndex = ((index % total) + total) % total;
+
+        cards.forEach((card, i) => {
+            card.classList.remove(
+                'carousel-active', 'carousel-prev-card', 'carousel-next-card',
+                'carousel-far-left', 'carousel-far-right'
+            );
+
+            const diff = ((i - currentIndex) % total + total) % total;
+
+            if (diff === 0) {
+                card.classList.add('carousel-active');
+            } else if (diff === total - 1) {
+                card.classList.add('carousel-prev-card');
+            } else if (diff === 1) {
+                card.classList.add('carousel-next-card');
+            } else if (diff === total - 2) {
+                card.classList.add('carousel-far-left');
+            } else if (diff === 2) {
+                card.classList.add('carousel-far-right');
+            }
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    // Inicializar
+    updateCarousel(0);
+
+    // Botones
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        updateCarousel(currentIndex - 1);
+        resetAutoplay();
+    });
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        updateCarousel(currentIndex + 1);
+        resetAutoplay();
+    });
+
+    // Dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            updateCarousel(parseInt(dot.dataset.slide));
+            resetAutoplay();
+        });
+    });
+
+    // Teclado
+    document.addEventListener('keydown', (e) => {
+        const servicesSection = document.getElementById('servicios');
+        if (!servicesSection) return;
+        const rect = servicesSection.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!inView) return;
+
+        if (e.key === 'ArrowLeft') {
+            updateCarousel(currentIndex - 1);
+            resetAutoplay();
+        } else if (e.key === 'ArrowRight') {
+            updateCarousel(currentIndex + 1);
+            resetAutoplay();
+        }
+    });
+
+    // Swipe en movil
+    let touchStartX = 0;
+    carouselTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carouselTrack.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            updateCarousel(currentIndex + (diff > 0 ? 1 : -1));
+            resetAutoplay();
+        }
+    }, { passive: true });
+
+    // Autoplay
+    function startAutoplay() {
+        autoplayTimer = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+        }, 5000);
+    }
+    function resetAutoplay() {
+        clearInterval(autoplayTimer);
+        startAutoplay();
+    }
+    startAutoplay();
+}
+
 }); // Fin del DOMContentLoaded
 
-console.log('%c¡Bienvenido a NexusTech Solutions! ', 'color: #3b82f6; font-size: 20px; font-weight: bold;');
-console.log('%cSitio desarrollado con HTML, CSS y JavaScript', 'color: #60a5fa; font-size: 14px;');
+console.log('%c¡Bienvenido a NexusTech Solutions! ', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
+console.log('%cSitio desarrollado con HTML, CSS y JavaScript', 'color: #38bdf8; font-size: 14px;');

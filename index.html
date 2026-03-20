@@ -23,8 +23,8 @@
     <meta name="ICBM" content="18.486058, -69.931212">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#1e40af">
-    <meta name="msapplication-TileColor" content="#1e40af">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta name="msapplication-TileColor" content="#1d4ed8">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.nexustech.com/">
@@ -58,15 +58,20 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
      <link rel="icon" type="image/jpeg" href="img/logo-nexustech.jpeg">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        .testimonial-stars .bi { font-size: 1rem; color: #f59e0b; }
+        .author-avatar .bi { font-size: 1.5rem; }
+        .step-icon .bi { font-size: 1.5rem; }
+        .info-icon .bi { font-size: 1.5rem; }
+    </style>
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -242,6 +247,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
@@ -254,8 +260,8 @@
                     <a href="#contacto" class="btn btn-primary d-inline-flex align-items-center gap-2">
                     Comenzar Proyecto
                     </a>
-                    <a href="#portafolio" class="btn btn-secondary"><i class="bi bi-database"></i> Ver Trabajos</a>
-                    <a href="presentacion.html" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:0.5em;"><i class="bi bi-easel2" style="font-size:1.2em;"></i>
+                    <a href="#portafolio" class="btn btn-secondary"><i class="bi bi-collection" style="font-size:1rem;"></i> Ver Trabajos</a>
+                    <a href="presentacion.html" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:0.5em;"><i class="bi bi-easel" style="font-size:1.1rem;"></i>
                     Ver presentación</a>
                 </div>
             </div>
@@ -403,74 +409,107 @@
                 <h2 class="section-title">Nuestros Servicios</h2>
                 <p class="section-subtitle">Soluciones web adaptadas a las necesidades de tu empresa</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas de aterrizaje optimizadas para convertir visitantes en clientes. Perfectas para campañas y lanzamientos.</p>
-                    <ul class="service-features">
-                        <li>Diseño responsive</li>
-                        <li>Optimización SEO</li>
-                        <li>Alta conversión</li>
-                    </ul>
-                </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-prev" aria-label="Anterior">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="service-card" data-index="0">
+                            <div class="service-card-top">
+                                <div class="service-icon">
+                                    <i class="bi bi-layers"></i>
+                                </div>
+                                <h3>Landing Pages</h3>
+                                <p>Páginas de aterrizaje optimizadas para convertir visitantes en clientes. Perfectas para campañas y lanzamientos.</p>
+                            </div>
+                            <div class="service-card-bottom">
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Diseño responsive</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Optimización SEO</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Alta conversión</li>
+                                </ul>
+                                <a href="#contacto" class="service-cta">
+                                    <span>Solicitar cotización</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
 
-                <div class="service-card featured" data-aos="fade-up" data-aos-delay="600">
-                    <div class="featured-badge">Más Popular</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18M9 21V9"/>
-                        </svg>
-                    </div>
-                    <h3>Sitios Web Corporativos</h3>
-                    <p>Sitios web completos para empresas que buscan establecer una presencia profesional y confiable en línea.</p>
-                    <ul class="service-features">
-                        <li>Múltiples páginas</li>
-                        <li>Sistema de gestión</li>
-                        <li>Integración de redes</li>
-                    </ul>
-                </div>
+                        <div class="service-card featured" data-index="1">
+                            <div class="featured-badge">Más Popular</div>
+                            <div class="service-card-top">
+                                <div class="service-icon">
+                                    <i class="bi bi-grid-1x2"></i>
+                                </div>
+                                <h3>Sitios Web Corporativos</h3>
+                                <p>Sitios web completos para empresas que buscan establecer una presencia profesional y confiable en línea.</p>
+                            </div>
+                            <div class="service-card-bottom">
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Múltiples páginas</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Sistema de gestión</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Integración de redes</li>
+                                </ul>
+                                <a href="#contacto" class="service-cta service-cta-featured">
+                                    <span>Solicitar cotización</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="800">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                    </div>
-                    <h3>Rediseño Web</h3>
-                    <p>Modernizamos tu sitio web existente con diseño actual, mejor rendimiento y experiencia de usuario mejorada.</p>
-                    <ul class="service-features">
-                        <li>Análisis completo</li>
-                        <li>Diseño moderno</li>
-                        <li>Mejor rendimiento</li>
-                    </ul>
-                </div>
+                        <div class="service-card" data-index="2">
+                            <div class="service-card-top">
+                                <div class="service-icon">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </div>
+                                <h3>Rediseño Web</h3>
+                                <p>Modernizamos tu sitio web existente con diseño actual, mejor rendimiento y experiencia de usuario mejorada.</p>
+                            </div>
+                            <div class="service-card-bottom">
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Análisis completo</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Diseño moderno</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Mejor rendimiento</li>
+                                </ul>
+                                <a href="#contacto" class="service-cta">
+                                    <span>Solicitar cotización</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 7h16M4 12h16M4 17h16"/>
-                            <rect x="2" y="3" width="20" height="18" rx="2" fill="none"/>
-                            <circle cx="8" cy="7" r="1" fill="currentColor"/>
-                            <circle cx="8" cy="12" r="1" fill="currentColor"/>
-                            <circle cx="8" cy="17" r="1" fill="currentColor"/>
-                        </svg>
+                        <div class="service-card" data-index="3">
+                            <div class="service-card-top">
+                                <div class="service-icon">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+                                <h3>Software a la Medida</h3>
+                                <p>Desarrollamos soluciones de software personalizadas que se adaptan perfectamente a los procesos únicos de tu negocio.</p>
+                            </div>
+                            <div class="service-card-bottom">
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Totalmente personalizado</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Escalable y robusto</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Integración con sistemas</li>
+                                </ul>
+                                <a href="#contacto" class="service-cta">
+                                    <span>Solicitar cotización</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Software a la Medida</h3>
-                    <p>Desarrollamos soluciones de software personalizadas que se adaptan perfectamente a los procesos únicos de tu negocio.</p>
-                    <ul class="service-features">
-                        <li>Totalmente personalizado</li>
-                        <li>Escalable y robusto</li>
-                        <li>Integración con sistemas</li>
-                    </ul>
                 </div>
+                <button class="carousel-btn carousel-next" aria-label="Siguiente">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators">
+                <button class="carousel-dot active" data-slide="0" aria-label="Servicio 1"></button>
+                <button class="carousel-dot" data-slide="1" aria-label="Servicio 2"></button>
+                <button class="carousel-dot" data-slide="2" aria-label="Servicio 3"></button>
+                <button class="carousel-dot" data-slide="3" aria-label="Servicio 4"></button>
             </div>
         </div>
     </section>
@@ -489,9 +528,7 @@
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                            </svg>
+                            <i class="bi bi-chat-dots"></i>
                         </div>
                         <h3>Consulta Inicial</h3>
                         <p>Conversamos sobre tu negocio, objetivos y necesidades específicas. Analizamos tu mercado y competencia.</p>
@@ -509,9 +546,7 @@
                     <div class="step-number">02</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                            </svg>
+                            <i class="bi bi-clipboard-check"></i>
                         </div>
                         <h3>Planificación</h3>
                         <p>Desarrollamos la arquitectura de información, mapa del sitio y wireframes iniciales del proyecto.</p>
@@ -529,9 +564,7 @@
                     <div class="step-number">03</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                            </svg>
+                            <i class="bi bi-palette"></i>
                         </div>
                         <h3>Diseño UI/UX</h3>
                         <p>Creamos diseños visuales modernos enfocados en la experiencia del usuario y tu identidad de marca.</p>
@@ -549,10 +582,7 @@
                     <div class="step-number">04</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"/>
-                                <polyline points="8 6 2 12 8 18"/>
-                            </svg>
+                            <i class="bi bi-code-slash"></i>
                         </div>
                         <h3>Desarrollo</h3>
                         <p>Convertimos el diseño en un sitio funcional con código limpio y las mejores prácticas.</p>
@@ -570,11 +600,7 @@
                     <div class="step-number">05</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="9" y1="15" x2="15" y2="15"/>
-                            </svg>
+                            <i class="bi bi-file-earmark-check"></i>
                         </div>
                         <h3>Pruebas & QA</h3>
                         <p>Realizamos pruebas exhaustivas en múltiples dispositivos y navegadores.</p>
@@ -592,10 +618,7 @@
                     <div class="step-number">06</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polygon points="10 8 16 12 10 16 10 8"/>
-                            </svg>
+                            <i class="bi bi-rocket-takeoff"></i>
                         </div>
                         <h3>Lanzamiento</h3>
                         <p>Publicamos tu sitio web, configuramos hosting, dominio y certificado SSL.</p>
@@ -613,9 +636,7 @@
                     <div class="step-number">07</div>
                     <div class="step-content">
                         <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
-                            </svg>
+                            <i class="bi bi-wrench-adjustable"></i>
                         </div>
                         <h3>Soporte</h3>
                         <p>Ofrecemos soporte continuo para mantener tu sitio actualizado y seguro.</p>
@@ -650,9 +671,7 @@
                                 <span class="portfolio-tag">Plataforma web</span>
                                 <span class="portfolio-btn">
                                     <span>Ver Detalles</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
+                                    <i class="bi bi-arrow-right" style="font-size:1rem;"></i>
                                 </span>
                             </div>
                         </div>
@@ -670,9 +689,7 @@
                                 <span class="portfolio-tag">Sitio Web</span>
                                 <span class="portfolio-btn">
                                     <span>Ver Detalles</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
+                                    <i class="bi bi-arrow-right" style="font-size:1rem;"></i>
                                 </span>
                             </div>
                         </div>
@@ -690,9 +707,7 @@
                                 <span class="portfolio-tag">Sistema de Gestión</span>
                                 <span class="portfolio-btn">
                                     <span>Ver Detalles</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
+                                    <i class="bi bi-arrow-right" style="font-size:1rem;"></i>
                                 </span>
                             </div>
                         </div>
@@ -714,33 +729,21 @@
                 <!-- Testimonio 1 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
                     </div>
                     <div class="testimonial-quote-icon">"</div>
                     <p class="testimonial-text"> El equipo de NexusTech transformó completamente nuestra presencia online. El sitio web es moderno, rápido y ha aumentado significativamente nuestras consultas de clientes.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
+                            <i class="bi bi-person-fill"></i>
                         </div>
                         <div class="author-info">
                             <h4>Laura Siri</h4>
-                            <p>Gerente, Rafael Soluciones Electronica</p>
+                            <p>Gerente, R.S.E</p>
                         </div>
                     </div>
                 </div>
@@ -749,29 +752,17 @@
                 <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-badge">⭐ Destacado</div>
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
                     </div>
                     <div class="testimonial-quote-icon">"</div>
                     <p class="testimonial-text">Increíble experiencia de principio a fin. Profesionales, creativos y muy atentos a cada detalle. Nuestro e-commerce superó todas las expectativas y las ventas online se han triplicado.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
+                            <i class="bi bi-person-fill"></i>
                         </div>
                         <div class="author-info">
                             <h4>Ana Rodríguez</h4>
@@ -783,29 +774,17 @@
                 <!-- Testimonio 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
                     </div>
                     <div class="testimonial-quote-icon">"</div>
                     <p class="testimonial-text">Muy recomendados. Entendieron perfectamente lo que necesitábamos para nuestra clínica. El sistema de citas online funciona de maravilla y nuestros pacientes están encantados.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
+                            <i class="bi bi-person-fill"></i>
                         </div>
                         <div class="author-info">
                             <h4>Dr. Luis Fernández</h4>
@@ -832,21 +811,15 @@
                     <p>Envíanos un mensaje directo y te responderemos lo antes posible</p>
                     <ul class="whatsapp-benefits">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 13l4 4L19 7"/>
-                            </svg>
+                            <i class="bi bi-check-lg" style="font-size:1rem;"></i>
                             <span>Respuesta rápida</span>
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 13l4 4L19 7"/>
-                            </svg>
+                            <i class="bi bi-check-lg" style="font-size:1rem;"></i>
                             <span>Comunicación directa</span>
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 13l4 4L19 7"/>
-                            </svg>
+                            <i class="bi bi-check-lg" style="font-size:1rem;"></i>
                             <span>Sin formularios complicados</span>
                         </li>
                     </ul>
@@ -940,28 +913,21 @@
                 <div class="contact-info">
                     <div class="info-box">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                            <i class="bi bi-envelope"></i>
                         </div>
                         <h4>Email</h4>
                         <p>rafaeltavares0266@gmail.com </p>
                     </div>
                     <div class="info-box">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                            </svg>
+                            <i class="bi bi-telephone"></i>
                         </div>
                         <h4>Teléfono</h4>
                         <p>(809) 629-7596</p>
                     </div>
                     <div class="info-box">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 6v6l4 2"/>
-                            </svg>
+                            <i class="bi bi-clock"></i>
                         </div>
                         <h4>Horario</h4>
                         <p>Lun - Vie: 9am - 6pm</p>
@@ -990,15 +956,11 @@
                     <p class="footer-description">Transformamos ideas en experiencias digitales excepcionales. Soluciones web profesionales para empresas que buscan destacar.</p>
                     <div class="footer-contact-info">
                         <div class="footer-contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                            <i class="bi bi-envelope" style="font-size:1rem;"></i>
                             <span>rafaeltavares0266@gmail.com</span>
                         </div>
                         <div class="footer-contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                            </svg>
+                            <i class="bi bi-telephone" style="font-size:1rem;"></i>
                             <span> (809) 629-7596</span>
                         </div>
                     </div>
@@ -1064,9 +1026,7 @@
                             <input type="hidden" name="_subject" value="Nueva suscripción al Newsletter - NexusTech">
                             <input type="email" name="email" placeholder="Tu email" required>
                             <button type="submit" id="newsletter-btn">
-                                <svg class="newsletter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                                </svg>
+                                <i class="bi bi-send newsletter-icon" style="font-size:1rem;"></i>
                                 <svg class="newsletter-spinner" viewBox="0 0 50 50" style="display: none;">
                                     <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5"></circle>
                                 </svg>
@@ -1107,6 +1067,11 @@
   
 
 
+    <!-- Boton volver arriba -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
     <!-- AOS Animation Library -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -1121,6 +1086,6 @@
         });
     </script>
     <script src="js/script.js"></script>
-    
+
 </body>
 </html>
